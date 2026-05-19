@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "yawp-player-claim",
+	"version": "${version}",
+	"name": "yawp player claim",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/yawp-player-claim/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.opwenam.yawpplayerclaim.YawpPlayerClaim"
+		],
+		"client": [
+			"com.opwenam.yawpplayerclaim.client.YawpPlayerClaimClient"
+		],
+		"fabric-datagen": [
+			"com.opwenam.yawpplayerclaim.client.YawpPlayerClaimDataGenerator"
+		]
+	},
+	"mixins": [
+		"yawp-player-claim.mixins.json",
+		{
+			"config": "yawp-player-claim.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
