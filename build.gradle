@@ -7,6 +7,9 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+	maven {
+		url "https://cursemaven.com"
+	}
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -40,6 +43,9 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Yet Another World Protector (Fabric 1.21.1) as dependency. 7166809
+	modImplementation "curse.maven:yawp-663276:7166809"
 	
 }
 

@@ -3,15 +3,15 @@
 	"id": "yawp-player-claim",
 	"version": "${version}",
 	"name": "yawp player claim",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "allows players to claim regions in Yet Another World Protector",
 	"authors": [
-		"Me!"
+		"opwenam"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/opwenam/player-claim"
 	},
-	"license": "CC0-1.0",
+	"license": "GPL-2.0-only",
 	"icon": "assets/yawp-player-claim/icon.png",
 	"environment": "*",
 	"entrypoints": {
