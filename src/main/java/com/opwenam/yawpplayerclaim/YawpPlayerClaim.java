@@ -1,9 +1,13 @@
 package com.opwenam.yawpplayerclaim;
 
+import com.opwenam.yawpplayerclaim.component.ModComponents;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+// Custom imports
+import de.z0rdak.yawp.api.*;
 
 public class YawpPlayerClaim implements ModInitializer {
 	public static final String MOD_ID = "yawp-player-claim";
@@ -20,5 +24,6 @@ public class YawpPlayerClaim implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+		ModComponents.registerDataComponentTypes();
 	}
 }
