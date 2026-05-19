@@ -10,6 +10,11 @@ repositories {
 	maven {
 		url "https://cursemaven.com"
 	}
+
+	maven {
+		name = "Fuzs Mod Resources"
+		url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+	}
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -46,7 +51,9 @@ dependencies {
 
 	// Yet Another World Protector (Fabric 1.21.1) as dependency. 7166809
 	modImplementation "curse.maven:yawp-663276:7166809"
-	
+
+	// Forge Config API Port (Dependency of YAWP) 7213608
+	modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:21.1.6"
 }
 
 processResources {
