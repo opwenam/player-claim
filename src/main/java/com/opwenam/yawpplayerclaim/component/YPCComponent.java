@@ -2,6 +2,9 @@ package com.opwenam.yawpplayerclaim.component;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.network.RegistryByteBuf;
+import net.minecraft.network.codec.PacketCodec;
+import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.util.Util;
 import net.minecraft.util.Uuids;
 import net.minecraft.util.math.BlockPos;
@@ -47,4 +50,33 @@ public record YPCComponent(
                             .forGetter(YPCComponent::regionName)
 
             ).apply(instance, YPCComponent::new));
+
+    public static final PacketCodec<RegistryByteBuf, YPCComponent> PACKET_CODEC =
+            PacketCodec.of(
+                    (value, buf) -> {
+                        PacketCodecs.STRING.encode(buf, value.owner());
+                        Uuids.PACKET_CODEC.encode(buf, value.ownerUUID());
+
+                        PacketCodecs.BOOL.encode(buf, value.isValidClaim());
+                        PacketCodecs.BOOL.encode(buf, value.hasActivated());
+
+                        PacketCodecs.optional(BlockPos.PACKET_CODEC).encode(buf, value.pos1());
+                        PacketCodecs.optional(BlockPos.PACKET_CODEC).encode(buf, value.pos2());
+
+                        PacketCodecs.STRING.encode(buf, value.regionName());
+                    },
+
+                    buf -> new YPCComponent(
+                            PacketCodecs.STRING.decode(buf),
+                            Uuids.PACKET_CODEC.decode(buf),
+
+                            PacketCodecs.BOOL.decode(buf),
+                            PacketCodecs.BOOL.decode(buf),
+
+                            PacketCodecs.optional(BlockPos.PACKET_CODEC).decode(buf),
+                            PacketCodecs.optional(BlockPos.PACKET_CODEC).decode(buf),
+
+                            PacketCodecs.STRING.decode(buf)
+                    )
+            );
 }
