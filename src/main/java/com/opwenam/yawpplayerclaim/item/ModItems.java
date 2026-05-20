@@ -12,11 +12,6 @@ import net.minecraft.util.Util;
 import java.util.Optional;
 
 public class ModItems {
-    //public static final Item YPC_WAND = Registry.register(
-    //        Registries.ITEM,
-    //        Identifier.of(YawpPlayerClaim.MOD_ID, "ypc_wand"),
-    //        new YPCWand(new Item.Settings())
-    //);
 
     public static final Item YPC_WAND = Registry.register(
             Registries.ITEM,
