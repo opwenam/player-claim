@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 // Custom imports
-import de.z0rdak.yawp.api.*;
+
 
 public class YawpPlayerClaim implements ModInitializer {
 	public static final String MOD_ID = "yawp-player-claim";
