@@ -18,6 +18,9 @@
 		"main": [
 			"com.opwenam.yawpplayerclaim.YawpPlayerClaim"
 		],
+		"client": [
+			"com.opwenam.yawpplayerclaim.client.YawpPlayerClaimClient"
+		],
 		"fabric-datagen": [
 			"com.opwenam.yawpplayerclaim.client.YawpPlayerClaimDataGenerator"
 		]
